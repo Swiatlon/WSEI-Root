@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "allowJs": true,
+    "checkJs": false,
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "baseUrl": "./src",
+    "paths": {
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "configs/*": ["configs/*"],
+      "contexts/*": ["contexts/*"],
+      "contract/*": ["contract/*"],
+      "hooks/*": ["hooks/*"],
+      "i18n/*": ["i18n/*"],
+      "layouts/*": ["layouts/*"],
+      "middlewares/*": ["middlewares/*"],
+      "routes/*": ["routes/*"],
+      "theme/*": ["theme/*"],
+      "types/*": ["types/*"],
+      "utils/*": ["utils/*"]
+    }
+  },
+  "include": ["src/**/*", "./custom.d.ts", "jest.config.js", "eslint.config.js" ],
+  "exclude": ["node_modules", "dist"],
+
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

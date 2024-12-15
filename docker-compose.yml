@@ -1,0 +1,37 @@
+services:
+  backend:
+    build:
+      context: ./University-BN
+      dockerfile: Dockerfile
+    ports:
+      - "8800:8800"
+    environment:
+      - PORT=8800
+      - DB_PORT=5432
+      - DB_HOST=127.0.0.1
+      - DB_USER=postgres
+      - DB_PASS=wiercik
+      - DB_NAME=university
+    depends_on:
+      - database
+
+  database:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: wiercik
+      POSTGRES_DB: university
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  frontend:
+    build:
+      context: ./University-FN
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+
+volumes:
+  postgres_data:
